@@ -7,7 +7,7 @@ require("dotenv").config({ path: "./.env" })
 db()
 app.use(express.json())
 app.use(cors())
-
+app.use(express.static("public"))
 
 app.use("/users", require("./routes/userRoutes"))
 app.use("/book", require("./routes/bookRoutes"))
