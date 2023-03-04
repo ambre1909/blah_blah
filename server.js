@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const db = require("././config/db")
+const mongoose = require("mongoose")
 
 const app = express()
 require("dotenv").config({ path: "./.env" })
@@ -17,5 +18,10 @@ app.use("/admin", require("./routes/adminRoutes"))
 app.use("/sort", require("./routes/sortRoutes"))
 
 const PORT = process.env.PORT || 5000
-app.listen(PORT,
-    console.log(`SERVER RUNNING http://localhost:${PORT}`))
+
+
+mongoose.connection.once("open", () => {
+    app.listen(PORT,
+        console.log(`SERVER RUNNING http://localhost:${PORT}`))
+    console.log("mongo connected");
+})
