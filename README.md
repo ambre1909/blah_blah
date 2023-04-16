@@ -1,0 +1,1 @@
+A web application built using React JS,MongoDB and Node JS that allows users to search for rides and book carpool rides. Implemented features such as user authentication. Also implemented searching, sorting, and filtering options to make it easier for users to find and book rides.
